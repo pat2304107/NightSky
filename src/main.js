@@ -3,7 +3,9 @@ const body = document.querySelector("body");
 const discriptionContainerElement = document.querySelector(
   ".discription-container",
 );
+const sentence = document.querySelector(".sentence");
 let inputValue;
+let isStarAnimationEnded = false;
 
 inputElement.addEventListener("input", (e) => {
   inputValue = e.target.value;
@@ -22,13 +24,21 @@ const createStars = (count) => {
   console.log(count);
   for (let i = 0; i < count; i++) {
     let starElement = document.createElement("span");
+
     starElement.className = "star";
     starElement.textContent = "*";
-    starElement.style.left = Math.random() * window.innerWidth + "px";
-    starElement.style.top = Math.random() * window.innerHeight + "px";
+    starElement.style.left = Math.random() * 100 + "%";
+    starElement.style.top = Math.random() * 100 + "%";
 
     setTimeout(() => {
       body.appendChild(starElement);
+      if (i == count - 1) {
+        isStarAnimationEnded = true;
+        console.log(isStarAnimationEnded);
+        if (isStarAnimationEnded == true) {
+          sentence.classList.add("show");
+        }
+      }
     }, 100 * i);
   }
 };
