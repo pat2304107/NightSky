@@ -3,6 +3,7 @@ const body = document.querySelector("body");
 const discriptionContainerElement = document.querySelector(
   ".discription-container",
 );
+const retryButton = document.querySelector(".retry");
 const sentence = document.querySelector(".sentence");
 let inputValue;
 let isStarAnimationEnded = false;
@@ -18,6 +19,10 @@ inputElement.addEventListener("keydown", (e) => {
     createStars(inputValue);
     // console.log("enter:", inputValue);
   }
+});
+
+retryButton.addEventListener("click", () => {
+  resetScene();
 });
 
 const createStars = (count) => {
@@ -41,4 +46,18 @@ const createStars = (count) => {
       }
     }, 100 * i);
   }
+};
+
+const resetScene = () => {
+  const stars = document.querySelectorAll(".star");
+  stars.forEach((star) => {
+    console.log(star);
+    star.remove();
+  });
+
+  sentence.classList.remove("show");
+  discriptionContainerElement.classList.remove("transparent");
+
+  inputValue = "";
+  inputElement.value = "";
 };
