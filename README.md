@@ -35,6 +35,7 @@ Then open the local URL printed in your terminal.
 | `npm run dev`     | Start the development server.         |
 | `npm run build`   | Create a production build.            |
 | `npm run preview` | Preview the production build locally. |
+| `npm run deploy`  | Build and publish to GitHub Pages.    |
 
 ## Project Structure
 
@@ -52,3 +53,14 @@ Then open the local URL printed in your terminal.
 
 - Enter a positive integer to control the number of stars.
 - Click **Retry** to reset and try another number.
+
+## Deploy to GitHub Pages
+
+1. Create a GitHub repository and push this project.
+2. Run:
+
+```bash
+npm run deploy
+```
+
+3. In GitHub, go to **Settings → Pages** and select the `gh-pages` branch.
