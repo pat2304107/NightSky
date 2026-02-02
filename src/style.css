@@ -55,6 +55,7 @@ body {
   margin-top: 16px;
   transition: 0.3s;
   cursor: pointer;
+  user-select: none;
 }
 
 .retry:hover {
